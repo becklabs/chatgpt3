@@ -2,7 +2,7 @@
 
 # chatGPT-3
 
-A chatGPT clone for technical questions powered by GPT-3 prompt engineering and written almost entirely by chatGPT.
+A chatGPT clone for technical questions powered by GPT-3 prompt engineering and written in React almost entirely by chatGPT.
 
 ## Example Interactions
 
