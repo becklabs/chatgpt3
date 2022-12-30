@@ -1,26 +1,16 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";
+import PropTypes from 'prop-types';
+import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { solarizedLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
-class CodeBlock extends PureComponent {
-  static propTypes = {
-    value: PropTypes.string.isRequired,
-    language: PropTypes.string
-  };
-
-  static defaultProps = {
-    language: null
-  };
-
-  render() {
-    const { language, value } = this.props;
-    return (
-      <SyntaxHighlighter language={language} style={coy}>
-        {value}
-      </SyntaxHighlighter>
-    );
-  }
+export default function CodeBlock({ language = null, value }) {
+  return (
+    <SyntaxHighlighter language={language} style={solarizedLight}>
+      {value}
+    </SyntaxHighlighter>
+  );
 }
 
-export default CodeBlock;
+CodeBlock.propTypes = {
+  value: PropTypes.string.isRequired,
+  language: PropTypes.string,
+}

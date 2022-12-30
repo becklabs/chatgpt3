@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
     "dompurify": "^2.4.1",
+    "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",
     "font-awesome": "^4.7.0",
     "fs": "^0.0.1-security",

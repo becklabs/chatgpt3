@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+
+
+# chatGPT-3
+
+A chatGPT clone for technical questions powered by GPT-3 prompt engineering and written almost entirely by chatGPT.
+
+## Example Interactions
+
+![Example interaction 1](https://user-images.githubusercontent.com/55890162/210114630-3df3b3ab-3714-483b-91a2-807b8009aea9.png")
+
+![Example interaction 2](https://user-images.githubusercontent.com/55890162/210114640-46d40ae6-a297-4b43-b171-bcca4d4c6df1.png")
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

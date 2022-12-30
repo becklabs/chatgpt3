@@ -9,7 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
-import CodeBlock from './CodeBlock';
+import CodeBlock from './CodeBlock'
 
 import { FaUser, FaRobot } from 'react-icons/fa';
 
@@ -63,39 +63,40 @@ function App() {
   };
 
   return (
-    <div className="container mt-3">
-  <div className="messages" ref = {messagesContainer} style={{ height: 400, overflowY: 'scroll' }}>
-  {messages.map((message) => (
-  <div className="message-container" style={{ width: "100%" }}>
-    <div className="icon-container">
-    {message.user ? <FaUser size={30} className="mr-2" /> : <FaRobot size={30} className="mr-2" />}
-    </div>
-    <ReactMarkdown
-      key={message.id}
-      className="bg-light rounded p-2"
-      children={message.text}
-      remarkPlugins={[remarkMath]}
-      rehypePlugins={[rehypeKatex]}
-      renderers={{ code: CodeBlock }}
-    />
-  </div>
-))}
-  </div>
-      <div className="input-group mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Type a message..."
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
-        />
-        <div className="input-group-append">
-          <button className="btn btn-primary" type="button" onClick={sendMessage}>
-            Send
-          </button>
+  <div className="container mt-3" style={{ display: 'flex', flexDirection: 'column', marginBottom: '100px'}}>
+      <div className="messages" ref = {messagesContainer} style={{ flexGrow: 1, overflowY: 'scroll'}}>
+          {messages.map((message) => (
+            <div className="message-container" style={{ width: "100%" }}>
+              <div className="icon-container">
+                {message.user ? <FaUser size={30} className="mr-2" /> : <FaRobot size={30} className="mr-2" />}
+              </div>
+              <ReactMarkdown
+                key={message.id}
+                className="bg-light rounded p-2"
+                children={message.text}
+                remarkPlugins={[remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+                renderers={{ code: CodeBlock }}
+              />
+            </div>
+          ))}
         </div>
-      </div>
+
+      <div className="input-group mb-3 w-50" style={{position: 'fixed', bottom: 0}}> 
+          <input
+              type="text"
+              className="form-control"
+              placeholder="Type a message..."
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
+            />
+          <div className="input-group-append">
+              <button className="btn btn-primary" type="button" onClick={sendMessage}>
+                Send
+              </button>
+            </div>
+          </div>
     </div>
   );
 }
